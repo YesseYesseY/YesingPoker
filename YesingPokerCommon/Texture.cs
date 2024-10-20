@@ -37,6 +37,17 @@ namespace YesingPokerCommon
                 data[i] = color;
             return CreateRGBA(Renderer, data, width, height);
         }
+        // TODO: Make smoother noise option
+        public static Texture CreateNoise(WindowRenderer Renderer, int width, int height, uint mask = 0xffffffff, int min = 0, int max = 255)
+        {
+            uint[] data = new uint[width * height];
+            for (int i = 0; i < data.Length; i++)
+            {
+                var val = (uint)Random.Shared.Next(min, max);
+                data[i] = ((val << 24) | (val << 16) | (val << 8) | 0xff) & (mask | 0xff);
+            }
+            return CreateRGBA(Renderer, data, width, height);
+        }
 
         public void Destroy()
         {

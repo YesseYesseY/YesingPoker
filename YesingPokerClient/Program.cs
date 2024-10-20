@@ -8,7 +8,7 @@ if (SDL.SDL_Init(SDL.SDL_INIT_VIDEO) < 0)
 }
 
 //new TestWindow(1280, 720).Start();
-new NetworkTestWindow(1280, 720).Start();
+new PokerWindow(1280, 720).Start();
 
 SDL.SDL_Quit();
 
