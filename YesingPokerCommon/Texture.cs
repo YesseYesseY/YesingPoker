@@ -44,7 +44,7 @@ namespace YesingPokerCommon
             for (int i = 0; i < data.Length; i++)
             {
                 var val = (uint)Random.Shared.Next(min, max);
-                data[i] = ((val << 24) | (val << 16) | (val << 8) | 0xff) & (mask | 0xff);
+                data[i] = ((val << 24) | (val << 16) | (val << 8) | 0xff) & mask; // Alpha channel is also ur responsibility in the mask
             }
             return CreateRGBA(Renderer, data, width, height);
         }

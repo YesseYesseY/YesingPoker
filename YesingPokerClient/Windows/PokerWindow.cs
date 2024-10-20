@@ -17,7 +17,7 @@ namespace YesingPokerClient.Windows
 
         private void NewBackground()
         {
-            backgroundTexture = Texture.CreateNoise(Renderer, WindowSize.X, WindowSize.Y, 0x00ff0000, 100, 150);
+            backgroundTexture = Texture.CreateNoise(Renderer, WindowSize.X, WindowSize.Y, 0x00ff00ff, 100, 150);
         }
 
         public override void Render()
